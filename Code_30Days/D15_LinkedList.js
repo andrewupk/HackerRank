@@ -10,9 +10,10 @@ function Solution(){
         let node = new Node(data);
         if (head === null){
 			head = node;
+		} else if (head.next === null){
+			head.next = node;
 		} else {
-			head.next = node;	
-			console.log(head.next);
+			head.next = this.insert(head.next, data);
 		}
         return head;
     };
